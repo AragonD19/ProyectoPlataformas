@@ -16,4 +16,5 @@
     <string name="bienbenido">¡Bienbenido!</string>
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="nuevo_usuario_Padre">Nuevo Usuario Padre</string>
+    <string name="nuevo_usuario_hijo">Nuevo Usuario Hijo</string>
 </resources>
