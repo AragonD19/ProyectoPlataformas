@@ -83,5 +83,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13"
             android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="337dp"
+            android:layout_height="236dp"
+            android:src="@drawable/whatsapp_image_2022_08_10_at_11_22_19_pm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="28dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
