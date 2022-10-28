@@ -17,4 +17,9 @@
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="nuevo_usuario_Padre">Nuevo Usuario Padre</string>
     <string name="nuevo_usuario_hijo">Nuevo Usuario Hijo</string>
+    <string name="desempeño">Desempeño en las tareas de sus hijos:</string>
+    <string name="santiago">Santiago:</string>
+    <string name="ivania">Ivania</string>
+    <string name="crear_tarea">Crear tarea</string>
+    <string name="crear_hijo">crear hijo</string>
 </resources>
