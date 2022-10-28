@@ -1,12 +1,14 @@
 package gt.uvg.proyectoplataformas.Package
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
+
 import gt.uvg.proyectoplataformas.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,19 +36,26 @@ class MainFragmentLogin : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val crearPadre = view?.findViewById<Button>(R.id.button)
-        val inicio = view?.findViewById<Button>(R.id.button4)
-
-        crearPadre.setOnClickListener {
-            view.findNavController().navigate(R.id.Login_to_crearPadre)
-        }
-
-        inicio.setOnClickListener {
-            view.findNavController().navigate(R.id.Login_to_Padre)
-        }
 
         return inflater.inflate(R.layout.fragment_main_login, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val button = view.findViewById<Button>(R.id.button)
+        val inicio = view.findViewById<Button>(R.id.button4)
+
+        button.setOnClickListener{
+            findNavController().navigate(R.id.Login_to_crearPadre)
+        }
+
+        inicio.setOnClickListener{
+            findNavController().navigate(R.id.Login_to_Padre)
+        }
+
+
+    }
+
 
     companion object {
         /**
@@ -67,5 +76,6 @@ class MainFragmentLogin : Fragment() {
                 }
             }
     }
+
 }
 
