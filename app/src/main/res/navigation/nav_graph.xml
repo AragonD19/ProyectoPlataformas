@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainLogin">
+
+    <fragment
+        android:id="@+id/mainLogin"
+        android:name="gt.uvg.proyectoplataformas.Package.MainFragmentLogin"
+        android:label="fragment_main_login"
+        tools:layout="@layout/fragment_main_login" >
+        <action
+            android:id="@+id/Login_to_crearPadre"
+            app:destination="@id/crearUsuarioPadre" />
+        <action
+            android:id="@+id/Login_to_Padre"
+            app:destination="@id/menuPadre" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/crearUsuarioPadre"
+        android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioPadre"
+        android:label="fragment_crear_usuario_padre"
+        tools:layout="@layout/fragment_crear_usuario_padre" >
+        <action
+            android:id="@+id/crearPadre_to_padre"
+            app:destination="@id/menuPadre" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/crearUsuarioHijo"
+        android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioHijo"
+        android:label="fragment_crear_usuario_hijo"
+        tools:layout="@layout/fragment_crear_usuario_hijo" />
+
+    <fragment
+        android:id="@+id/crearTarea"
+        android:name="gt.uvg.proyectoplataformas.Package.CrearTarea"
+        android:label="fragment_crear_tarea"
+        tools:layout="@layout/fragment_crear_tarea"/>
+
+    <fragment
+        android:id="@+id/menuPadre"
+        android:name="gt.uvg.proyectoplataformas.Package.MenuPadre"
+        android:label="fragment_menu_padre"
+        tools:layout="@layout/fragment_menu_padre">
+        <action
+            android:id="@+id/padre_to_tarea"
+            app:destination="@id/crearTarea" />
+        <action
+            android:id="@+id/padre_to_crearHijo"
+            app:destination="@id/crearUsuarioHijo" />
+    </fragment>
+
+
+
+
+
+
+</navigation>

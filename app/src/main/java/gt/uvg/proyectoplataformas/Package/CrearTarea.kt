@@ -1,4 +1,4 @@
-package gt.uvg.proyectoplataformas.Packge
+package gt.uvg.proyectoplataformas.Package
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
