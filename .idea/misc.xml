@@ -3,17 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_crear_tarea.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_crear_usuario_hijo.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_crear_usuario_padre.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_main_login.xml" value="0.264" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_menu_hijo.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/acer/OneDrive - Universidad del Valle de Guatemala/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_menu_padre.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rentt/OneDrive/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_main_login.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/rentt/OneDrive/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/fragment_menu_hijo.xml" value="0.25" />
+        <entry key="..\:/Users/rentt/OneDrive/Documentos/GitHub/ProyectoPlataformas/app/src/main/res/layout/tarjeta_menu_hijo.xml" value="0.33" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
