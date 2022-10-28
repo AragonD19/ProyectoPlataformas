@@ -32,7 +32,11 @@
         android:id="@+id/crearUsuarioHijo"
         android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioHijo"
         android:label="fragment_crear_usuario_hijo"
-        tools:layout="@layout/fragment_crear_usuario_hijo" />
+        tools:layout="@layout/fragment_crear_usuario_hijo" >
+        <action
+            android:id="@+id/crearHijo_to_Hijo"
+            app:destination="@id/menuHijo" />
+    </fragment>
 
     <fragment
         android:id="@+id/crearTarea"
@@ -52,6 +56,12 @@
             android:id="@+id/padre_to_crearHijo"
             app:destination="@id/crearUsuarioHijo" />
     </fragment>
+
+    <fragment
+        android:id="@+id/menuHijo"
+        android:name="gt.uvg.proyectoplataformas.Package.MenuHijo"
+        android:label="fragment_menu_hijo"
+        tools:layout="@layout/fragment_menu_hijo" />
 
 
 

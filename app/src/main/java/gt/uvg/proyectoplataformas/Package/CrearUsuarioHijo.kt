@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,6 +38,18 @@ class CrearUsuarioHijo : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_crear_usuario_hijo, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val inicioHijo = view.findViewById<Button>(R.id.button2)
+
+        inicioHijo.setOnClickListener{
+            findNavController().navigate(R.id.crearHijo_to_Hijo)
+        }
+
+
+
     }
 
     companion object {
