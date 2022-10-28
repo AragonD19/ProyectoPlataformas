@@ -9,13 +9,24 @@
         android:id="@+id/mainLogin"
         android:name="gt.uvg.proyectoplataformas.Package.MainFragmentLogin"
         android:label="fragment_main_login"
-        tools:layout="@layout/fragment_main_login" />
+        tools:layout="@layout/fragment_main_login" >
+        <action
+            android:id="@+id/action_mainLogin_to_crearUsuarioPadre2"
+            app:destination="@id/crearUsuarioPadre" />
+        <action
+            android:id="@+id/action_mainLogin_to_menuPadre"
+            app:destination="@id/menuPadre" />
+    </fragment>
 
     <fragment
         android:id="@+id/crearUsuarioPadre"
         android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioPadre"
         android:label="fragment_crear_usuario_padre"
-        tools:layout="@layout/fragment_crear_usuario_padre" />
+        tools:layout="@layout/fragment_crear_usuario_padre" >
+        <action
+            android:id="@+id/action_crearUsuarioPadre_to_menuPadre"
+            app:destination="@id/menuPadre" />
+    </fragment>
 
     <fragment
         android:id="@+id/crearUsuarioHijo"
@@ -28,6 +39,19 @@
         android:name="gt.uvg.proyectoplataformas.Package.CrearTarea"
         android:label="fragment_crear_tarea"
         tools:layout="@layout/fragment_crear_tarea"/>
+
+    <fragment
+        android:id="@+id/menuPadre"
+        android:name="gt.uvg.proyectoplataformas.Package.MenuPadre"
+        android:label="fragment_menu_padre"
+        tools:layout="@layout/fragment_menu_padre">
+        <action
+            android:id="@+id/action_menuPadre_to_crearTarea"
+            app:destination="@id/crearTarea" />
+        <action
+            android:id="@+id/action_menuPadre_to_crearUsuarioHijo"
+            app:destination="@id/crearUsuarioHijo" />
+    </fragment>
 
 
 
