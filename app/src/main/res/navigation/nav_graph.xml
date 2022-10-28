@@ -11,10 +11,10 @@
         android:label="fragment_main_login"
         tools:layout="@layout/fragment_main_login" >
         <action
-            android:id="@+id/action_mainLogin_to_crearUsuarioPadre2"
+            android:id="@+id/Login_to_crearPadre"
             app:destination="@id/crearUsuarioPadre" />
         <action
-            android:id="@+id/action_mainLogin_to_menuPadre"
+            android:id="@+id/Login_to_Padre"
             app:destination="@id/menuPadre" />
     </fragment>
 
@@ -24,7 +24,7 @@
         android:label="fragment_crear_usuario_padre"
         tools:layout="@layout/fragment_crear_usuario_padre" >
         <action
-            android:id="@+id/action_crearUsuarioPadre_to_menuPadre"
+            android:id="@+id/crearPadre_to_padre"
             app:destination="@id/menuPadre" />
     </fragment>
 
@@ -46,10 +46,10 @@
         android:label="fragment_menu_padre"
         tools:layout="@layout/fragment_menu_padre">
         <action
-            android:id="@+id/action_menuPadre_to_crearTarea"
+            android:id="@+id/padre_to_tarea"
             app:destination="@id/crearTarea" />
         <action
-            android:id="@+id/action_menuPadre_to_crearUsuarioHijo"
+            android:id="@+id/padre_to_crearHijo"
             app:destination="@id/crearUsuarioHijo" />
     </fragment>
 
