@@ -6,5 +6,4 @@
     android:scrollbars="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="16dp"
-    tools:listitem="@layout/tarjeta_menu_hijo" />
+    android:layout_marginBottom="16dp" />
