@@ -16,6 +16,9 @@
         <action
             android:id="@+id/Login_to_Padre"
             app:destination="@id/menuPadre" />
+        <action
+            android:id="@+id/action_mainLogin_to_inicioHijo"
+            app:destination="@id/inicioHijo" />
     </fragment>
 
     <fragment
@@ -62,6 +65,16 @@
         android:name="gt.uvg.proyectoplataformas.Package.MenuHijo"
         android:label="fragment_menu_hijo"
         tools:layout="@layout/fragment_menu_hijo" />
+
+    <fragment
+        android:id="@+id/inicioHijo"
+        android:name="gt.uvg.proyectoplataformas.Package.inicioHijo"
+        android:label="fragment_inicio_hijo"
+        tools:layout="@layout/fragment_inicio_hijo" >
+        <action
+            android:id="@+id/action_inicioHijo_to_menuHijo"
+            app:destination="@id/menuHijo" />
+    </fragment>
 
 
 
