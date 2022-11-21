@@ -10,14 +10,27 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    val titles = arrayOf("Hola")
+
+    val details = arrayOf("Mucho gusto")
+
+    val images = intArrayOf(R.drawable.ic_launcher_background)
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout, viewGroup,false)
         return ViewHolder(v)
     }
 
-    
+    override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
+        viewHolder.itemTitle.text = titles[i]
+        viewHolder.itemDetail.text = details[i]
+        viewHolder.itemImage.setImageResource(images[i])
+    }
 
 
+    override fun getItemCount(): Int {
+        return titles.size
+    }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
