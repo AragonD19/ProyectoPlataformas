@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import gt.uvg.proyectoplataformas.R
+import gt.uvg.proyectoplataformas.databinding.FragmentCrearTareaBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class CrearTarea : Fragment() {
     // TODO: Rename and change types of parameters
-    private var _binding: TareaCrearBinding? = null
+    private var _binding: FragmentCrearTareaBinding? = null
     private val binding get() = _binding!!
 
 
@@ -30,11 +31,12 @@ class CrearTarea : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = CrearTareaBinding.inflate(R.layout.fragment_crear_tarea, container, false)
+        _binding = FragmentCrearTareaBinding.inflate(inflater, container, false)
 
         val listaNombres = arrayOf("Adrian", "David", "Renatto")
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, listaNombres)
 
+        binding.editTextAsignarAHijo.setAdapter(arrayAdapter)
         return binding.root
     }
 

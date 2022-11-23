@@ -23,4 +23,5 @@
     <string name="crear_tarea">Crear tarea</string>
     <string name="crear_hijo">crear hijo</string>
     <string name="tareas">Tareas</string>
+    <string name="nombre_de_la_tarea">Nombre de la tarea:</string>
 </resources>
