@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.replace
+
+import gt.uvg.proyectoplataformas.Package.CrearTarea
 import gt.uvg.proyectoplataformas.Package.MenuHijo
+import gt.uvg.proyectoplataformas.Package.MenuPadre
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        replaceFragment(MenuHijo())
+        replaceFragment(MenuPadre())
 
 
     }
