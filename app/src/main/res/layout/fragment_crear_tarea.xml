@@ -116,9 +116,9 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="@string/crear_tarea"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/box"
+        android:text="@string/crear_tarea"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -44,6 +44,7 @@ class MainFragmentLogin : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val button = view.findViewById<Button>(R.id.button)
         val inicio = view.findViewById<Button>(R.id.button4)
+        val menuSon = view.findViewById<Button>(R.id.buttonHijo)
 
         button.setOnClickListener{
             findNavController().navigate(R.id.Login_to_crearPadre)
@@ -51,6 +52,9 @@ class MainFragmentLogin : Fragment() {
 
         inicio.setOnClickListener{
             findNavController().navigate(R.id.Login_to_Padre)
+        }
+        menuSon.setOnClickListener{
+            findNavController().navigate(R.id.action_mainLogin_to_inicioHijo)
         }
 
 
