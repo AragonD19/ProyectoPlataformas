@@ -1,11 +1,14 @@
 package gt.uvg.proyectoplataformas.Package
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.NumberPicker
+import android.widget.Toast
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentCrearTareaBinding
 
@@ -23,8 +26,29 @@ class CrearTarea : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentCrearTareaBinding? = null
     private val binding get() = _binding!!
+    var handler: Handler = Handler()
+    var runnable: Runnable? = null
+    var delay = 500
+
+    override fun onResume() {
+        super.onResume()
+        val listaNombres = arrayOf("Adrian", "David", "Renatto")
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, listaNombres)
+        
+        val view = R.layout.fragment_crear_tarea
+        var num = binding.numIncentivo
+        num.maxValue = 20
+        num.minValue = 1
+
+       /* handler.postDelayed(Runnable {
+            handler.postDelayed(runnable!!, delay.toLong())
+            Toast.makeText(activity, num.value.toString(), Toast.LENGTH_SHORT).show()
+        }.also { runnable = it }, delay.toLong())
+        */
 
 
+        binding.editTextAsignarAHijo.setAdapter(arrayAdapter)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,10 +57,6 @@ class CrearTarea : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentCrearTareaBinding.inflate(inflater, container, false)
 
-        val listaNombres = arrayOf("Adrian", "David", "Renatto")
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, listaNombres)
-
-        binding.editTextAsignarAHijo.setAdapter(arrayAdapter)
         return binding.root
     }
 
