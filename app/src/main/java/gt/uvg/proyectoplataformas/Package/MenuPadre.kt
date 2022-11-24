@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.R
+import gt.uvg.proyectoplataformas.databinding.FragmentMenuPadreBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +24,7 @@ class MenuPadre : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentMenuPadreBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,9 @@ class MenuPadre : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentMenuPadreBinding.inflate(layoutInflater)
+        binding = FragmentMenuPadreBinding.bind(view)
+
         val crearTarea = view.findViewById<Button>(R.id.crearTareaButton)
         val crearHijo = view.findViewById<Button>(R.id.crearHijoButton)
 
