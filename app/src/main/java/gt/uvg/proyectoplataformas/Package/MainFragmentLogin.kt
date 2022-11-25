@@ -1,13 +1,18 @@
 package gt.uvg.proyectoplataformas.Package
 
 
+import Hijos
+import Padre
+import Tareas
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import gt.uvg.proyectoplataformas.Database
 
 import gt.uvg.proyectoplataformas.R
 
@@ -45,6 +50,7 @@ class MainFragmentLogin : Fragment() {
         val button = view.findViewById<Button>(R.id.button)
         val inicio = view.findViewById<Button>(R.id.button4)
         val menuSon = view.findViewById<Button>(R.id.buttonHijo)
+        cPadre()
 
         button.setOnClickListener{
             findNavController().navigate(R.id.Login_to_crearPadre)
@@ -58,6 +64,28 @@ class MainFragmentLogin : Fragment() {
         }
 
 
+    }
+
+    private fun cPadre(){
+        val listaTemp = ArrayList<Hijos>()
+        val listaTareasSanti = ArrayList<Tareas>()
+        val listaTareasIvy = ArrayList<Tareas>()
+
+        listaTareasSanti.add(Tareas(0,"Lavar el carro","10",false))
+        listaTareasSanti.add(Tareas(1,"Sacar la basura","12",false))
+        listaTareasSanti.add(Tareas(2,"Barrer la casa","07",false))
+        listaTareasSanti.add(Tareas(3,"Lavar la ropa","11",false))
+        listaTareasIvy.add(Tareas(0,"Hacer la tarea","10",false))
+        listaTareasIvy.add(Tareas(1,"Pasear al perro","12",false))
+        listaTareasIvy.add(Tareas(2,"Ordendar el cuarto","07",false))
+        listaTareasIvy.add(Tareas(3,"Lavar la ropa","11",false))
+
+        listaTemp.add(Hijos(0,"Santi",listaTareasSanti,0))
+        listaTemp.add(Hijos(1,"Ivania",listaTareasIvy,0))
+
+
+        Database.listaPadre.add(Padre(
+            0,"1s2a2s","ful21592@uvg.edu.gt","123",listaTemp))
     }
 
 
