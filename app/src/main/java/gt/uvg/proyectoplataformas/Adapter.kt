@@ -3,9 +3,8 @@ package gt.uvg.proyectoplataformas
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import gt.uvg.proyectoplataformas.Data.DataItem
-import gt.uvg.proyectoplataformas.Data.Database.TYPE_HEADER
-import gt.uvg.proyectoplataformas.Data.Database.TYPE_ITEM
+import gt.uvg.proyectoplataformas.Database.TYPE_HEADER
+import gt.uvg.proyectoplataformas.Database.TYPE_ITEM
 import gt.uvg.proyectoplataformas.databinding.HeaderDesingBinding
 import gt.uvg.proyectoplataformas.databinding.ItemDesingBinding
 

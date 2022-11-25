@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.proyectoplataformas.Adapter
-import gt.uvg.proyectoplataformas.CustomAdapter
-import gt.uvg.proyectoplataformas.Data.Database
+import gt.uvg.proyectoplataformas.Database
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentMenuPadreBinding
 
@@ -36,15 +35,6 @@ class MenuPadre : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val itemList = Database.getItems()
-
-        adapterList.updateList(itemList)
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView.layoutManager = layoutManager
-        adapter = Adapter()
-        recyclerView.adapter = adapterList
-
-
 
         val view = R.layout.fragment_menu_padre
     }
@@ -77,4 +67,19 @@ class MenuPadre : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val itemList = Database.getItems()
+
+        adapterList.updateList(itemList)
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recyclerView2)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        adapter = Adapter()
+        recyclerView.adapter = adapterList
+    }
+
 }

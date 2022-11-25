@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="gt.uvg.proyectoplataformas.Data.Item" />
+            type="gt.uvg.proyectoplataformas.DataItem.Item" />
     </data>
 
     <androidx.cardview.widget.CardView

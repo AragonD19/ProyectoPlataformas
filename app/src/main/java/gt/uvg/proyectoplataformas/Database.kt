@@ -1,4 +1,4 @@
-package gt.uvg.proyectoplataformas.Data
+package gt.uvg.proyectoplataformas
 
 object Database {
     const val TYPE_HEADER = 0
