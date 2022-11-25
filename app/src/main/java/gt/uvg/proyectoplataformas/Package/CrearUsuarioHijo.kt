@@ -53,6 +53,7 @@ class CrearUsuarioHijo : Fragment() {
             if (!view.findViewById<TextView>(R.id.editTextTextPersonName).text.isNullOrEmpty()){
                 Database.listaPadre[0].listaHijos.add(Hijos(Database.listaPadre[0].listaHijos.size,view.findViewById<TextView>(R.id.editTextTextPersonName).text.toString(),
                     ArrayList<Tareas>(),0))
+                Toast.makeText(activity, "Hijo creada exitosamente", Toast.LENGTH_SHORT).show()
 
             }else {
                 Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()

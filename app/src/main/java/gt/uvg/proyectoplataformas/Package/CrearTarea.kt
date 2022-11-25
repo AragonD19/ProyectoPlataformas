@@ -33,7 +33,10 @@ class CrearTarea : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val listaNombres = arrayOf("Santi", "Ivania")
+        val listaNombres = ArrayList<String>()
+        for (i in Database.listaPadre[0].listaHijos){
+            listaNombres.add(i.nombre)
+        }
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, listaNombres)
         
         val view = R.layout.fragment_crear_tarea
@@ -60,13 +63,17 @@ class CrearTarea : Fragment() {
         button5.setOnClickListener{
             var contador = 0
             if (!view.findViewById<TextView>(R.id.editTextNombreTarea).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextDescripcionTarea).text.isNullOrEmpty() && !view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text.isNullOrEmpty()){
+                var flag = false
                 for (i in Database.listaPadre[0].listaHijos){
-                    if(i.nombre.equals(view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text)){
+                    if(i.nombre.equals(view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text.toString())){
                         Database.listaPadre[0].listaHijos[contador].tareas.add(Tareas(Database.listaPadre[0].listaHijos[contador].tareas.size,view.findViewById<TextView>(R.id.editTextNombreTarea).text.toString(),view.findViewById<TextView>(R.id.textView6).text.toString(),false))
+                        flag = true
+                        Toast.makeText(activity, "Tarea creada exitosamente", Toast.LENGTH_SHORT).show()
                     }
                     contador++
                 }
-                Toast.makeText(activity, "Hijo no encontrado", Toast.LENGTH_SHORT).show()
+                if(!flag)
+                    Toast.makeText(activity, "Hijo no encontrado", Toast.LENGTH_SHORT).show()
             }
             else {
                 Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()

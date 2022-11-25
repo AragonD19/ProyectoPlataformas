@@ -102,7 +102,7 @@ class MainFragmentLogin : Fragment() {
 
 
         Database.listaPadre.add(Padre(
-            0,"1s2a2s","ful21592@uvg.edu.gt","123",listaTemp))
+            0,"1s2a2s","a","123",listaTemp))
     }
 
 
