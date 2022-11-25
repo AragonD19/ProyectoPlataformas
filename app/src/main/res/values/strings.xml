@@ -25,4 +25,5 @@
     <string name="nombre_de_la_tarea">   Nombre de la tarea:</string>
     <string name="descripcion_de_la_tarea">   Descripción de la tarea:</string>
     <string name="inicio_sesion_hijo">Inicio sesión hijo</string>
+    <string name="menu_padre">Menu Padre</string>
 </resources>
