@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.R
 
@@ -46,7 +48,12 @@ class CrearUsuarioPadre : Fragment() {
 
 
         button3.setOnClickListener{
-            findNavController().navigate(R.id.crearPadre_to_padre)
+            if (!view.findViewById<TextView>(R.id.editTextTextPassword3).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextPersonName2).text.isNullOrEmpty()){
+                findNavController().navigate(R.id.crearPadre_to_padre)
+            }else{
+                
+            }
+
         }
 
 

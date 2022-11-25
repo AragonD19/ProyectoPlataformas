@@ -5,7 +5,7 @@
     <data>
         <variable
             name="header"
-            type="gt.uvg.proyectoplataformas.DataItem.Header" />
+            type="gt.uvg.proyectoplataformas.DataBase.DataItem" />
     </data>
 
     <androidx.cardview.widget.CardView

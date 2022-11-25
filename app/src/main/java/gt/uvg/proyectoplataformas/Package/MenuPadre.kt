@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.proyectoplataformas.Adapter
-import gt.uvg.proyectoplataformas.Database
+import gt.uvg.proyectoplataformas.DataBase.Database
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentMenuPadreBinding
 
