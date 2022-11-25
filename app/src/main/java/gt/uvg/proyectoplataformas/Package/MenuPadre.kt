@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.proyectoplataformas.Adapter
@@ -70,6 +73,17 @@ class MenuPadre : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val crearTarea = view.findViewById<Button>(R.id.crearTareaButton)
+        val crearHijo = view.findViewById<Button>(R.id.crearHijoButton)
+
+        crearTarea.setOnClickListener{
+            findNavController().navigate(R.id.padre_to_tarea)
+        }
+
+        crearHijo.setOnClickListener{
+            findNavController().navigate(R.id.padre_to_crearHijo)
+        }
 
         val itemList = Database.getItems()
 
