@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.Database
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentCrearTareaBinding
@@ -61,13 +62,15 @@ class CrearTarea : Fragment() {
             if (!view.findViewById<TextView>(R.id.editTextNombreTarea).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextDescripcionTarea).text.isNullOrEmpty() && !view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text.isNullOrEmpty()){
                 for (i in Database.listaPadre[0].listaHijos){
                     if(i.nombre.equals(view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text)){
-                        Database.listaPadre[0].listaHijos[contador].tareas.add(Tareas())
-                        break
+                        Database.listaPadre[0].listaHijos[contador].tareas.add(Tareas(Database.listaPadre[0].listaHijos[contador].tareas.size,view.findViewById<TextView>(R.id.editTextNombreTarea).text.toString(),view.findViewById<TextView>(R.id.textView6).text.toString(),false))
+                        findNavController().navigate(R.id.action_crearTarea_to_menuPadre)
                     }
                     contador++
                 }
-
-
+                Toast.makeText(activity, "Hijo no encontrado", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -84,15 +87,6 @@ class CrearTarea : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CrearTarea.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             CrearTarea().apply {

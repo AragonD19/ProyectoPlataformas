@@ -62,6 +62,9 @@
         android:name="IdPadre"
         app:argType="integer"
         android:defaultValue="0" />
+        <action
+            android:id="@+id/action_crearTarea_to_menuPadre"
+            app:destination="@id/menuPadre" />
     </fragment>
 
 
