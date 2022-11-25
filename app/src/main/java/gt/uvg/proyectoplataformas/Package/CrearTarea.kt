@@ -32,7 +32,7 @@ class CrearTarea : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val listaNombres = arrayOf("Adrian", "David", "Renatto")
+        val listaNombres = arrayOf("Santi", "Ivania")
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, listaNombres)
         
         val view = R.layout.fragment_crear_tarea

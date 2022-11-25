@@ -5,7 +5,7 @@
     <string name="crear_usuario">Crear Usuario</string>
     <string name="nuevo_usuario">Nuevo Usuario</string>
     <string name="correo">Correo</string>
-    <string name="usuario_texto">Usuario</string>
+    <string name="usuario_texto">Correo</string>
     <string name="correo_texto">Correo</string>
     <string name="nombre_texto">Nombre</string>
     <string name="contrasena_texto">Contraseña</string>

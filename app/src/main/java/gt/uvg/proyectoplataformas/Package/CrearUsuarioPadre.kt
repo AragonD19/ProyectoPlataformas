@@ -52,36 +52,29 @@ class CrearUsuarioPadre : Fragment() {
 
 
         button3.setOnClickListener{
-            if (!view.findViewById<TextView>(R.id.editTextTextPassword3).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextPersonName2).text.isNullOrEmpty()){
-                val listaTemp = ArrayList<Hijos>()
-                val listaTareasSanti = ArrayList<Tareas>()
-                val listaTareasIvy = ArrayList<Tareas>()
-
-                listaTareasSanti.add(Tareas(0,"Lavar el carro","10",false))
-                listaTareasSanti.add(Tareas(1,"Sacar la basura","12",false))
-                listaTareasSanti.add(Tareas(2,"Barrer la casa","07",false))
-                listaTareasSanti.add(Tareas(3,"Lavar la ropa","11",false))
-                listaTareasIvy.add(Tareas(0,"Hacer la tarea","10",false))
-                listaTareasIvy.add(Tareas(1,"Pasear al perro","12",false))
-                listaTareasIvy.add(Tareas(2,"Ordendar el cuarto","07",false))
-                listaTareasIvy.add(Tareas(3,"Lavar la ropa","11",false))
-
-                listaTemp.add(Hijos(0,"Santi",listaTareasSanti,0))
-                listaTemp.add(Hijos(1,"Ivania",listaTareasIvy,0))
-
-
-                Database.listaPadre.add(Padre(
+            if (!view.findViewById<TextView>(R.id.editTextTextPassword3).text.isNullOrEmpty() &&
+                !view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.isNullOrEmpty() &&
+                !view.findViewById<TextView>(R.id.editTextTextPersonName2).text.isNullOrEmpty()){
+                var flag = false
+                for (i in Database.listaPadre){
+                    Toast.makeText(activity, "Correo ya utilizado", Toast.LENGTH_SHORT).show()
+                    if ( view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString() == i.email) {
+                        Toast.makeText(activity, "Correo ya utilizado", Toast.LENGTH_SHORT).show()
+                        flag = true
+                        break
+                    }
+                }
+                if(!flag){
+                    val listaTemp = ArrayList<Hijos>()
+                    Database.listaPadre.add(Padre(
                         0,getRandomString(6),
                         view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString(),view.findViewById<TextView>(R.id.editTextTextPassword3).text.toString(),listaTemp))
-                findNavController().navigate(R.id.crearPadre_to_padre)
-
-            }else{
-                Toast.makeText(activity,"Faltan campos por llenar",Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.crearPadre_to_padre)
+                }
+            }else {
+                Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
     }
 
     fun getRandomString(length: Int) : String {

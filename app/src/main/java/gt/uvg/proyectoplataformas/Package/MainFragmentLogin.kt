@@ -10,7 +10,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.Database
 
@@ -57,7 +59,19 @@ class MainFragmentLogin : Fragment() {
         }
 
         inicio.setOnClickListener{
-            findNavController().navigate(R.id.Login_to_Padre)
+            if (!view.findViewById<EditText>(R.id.editTextTextPersonName13).text.isNullOrEmpty() &&
+                !view.findViewById<EditText>(R.id.editTextTextPassword).text.isNullOrEmpty()){
+                for (i in Database.listaPadre){
+                    if ( view.findViewById<TextView>(R.id.editTextTextPersonName13).text.toString() == i.email && view.findViewById<TextView>(R.id.editTextTextPassword).text.toString() == i.contrasena) {
+                        findNavController().navigate(R.id.Login_to_Padre)
+                    }
+                }
+                Toast.makeText(activity, "Correo o contraseña erronea", Toast.LENGTH_SHORT).show()
+
+            }else {
+                Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()
+            }
+
         }
         menuSon.setOnClickListener{
             findNavController().navigate(R.id.action_mainLogin_to_inicioHijo)
