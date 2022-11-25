@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import gt.uvg.proyectoplataformas.Adapter
+import gt.uvg.proyectoplataformas.CustomAdapter
+import gt.uvg.proyectoplataformas.Data.Database
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentMenuPadreBinding
 
@@ -22,16 +25,28 @@ private const val ARG_PARAM2 = "param2"
  */
 class MenuPadre : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var binding: FragmentMenuPadreBinding
+    private var _binding: FragmentMenuPadreBinding? = null
+    private val binding get() = _binding!!
+    private val adapterList by lazy { Adapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private lateinit var adapter: Adapter
+    private lateinit var recyclerView: RecyclerView
+
+
+
+    override fun onResume() {
+        super.onResume()
+        val itemList = Database.getItems()
+
+        adapterList.updateList(itemList)
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = layoutManager
+        adapter = Adapter()
+        recyclerView.adapter = adapterList
+
+
+
+        val view = R.layout.fragment_menu_padre
     }
 
     override fun onCreateView(
@@ -39,26 +54,8 @@ class MenuPadre : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu_padre, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentMenuPadreBinding.inflate(layoutInflater)
-        binding = FragmentMenuPadreBinding.bind(view)
-
-        val crearTarea = view.findViewById<Button>(R.id.crearTareaButton)
-        val crearHijo = view.findViewById<Button>(R.id.crearHijoButton)
-
-        crearTarea.setOnClickListener{
-            findNavController().navigate(R.id.padre_to_tarea)
-        }
-
-        crearHijo.setOnClickListener{
-            findNavController().navigate(R.id.padre_to_crearHijo)
-        }
-
-
+        _binding = FragmentMenuPadreBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     companion object {
