@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
-    val titles = arrayOf("Hola")
+    val titles = arrayOf("Lavar el carro","Sacar la basura","barrer la casa","lavar la ropa")
 
-    val details = arrayOf("Mucho gusto")
+    val details = arrayOf("10 puntos","20 puntos", "15 puntos", "5 puntos")
 
-    val images = intArrayOf(R.drawable.ic_launcher_background)
+    val images = intArrayOf(R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout, viewGroup,false)
