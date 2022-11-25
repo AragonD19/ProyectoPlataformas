@@ -30,6 +30,10 @@
         android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioPadre"
         android:label="fragment_crear_usuario_padre"
         tools:layout="@layout/fragment_crear_usuario_padre" >
+        <argument
+            android:name="IdPadre"
+            app:argType="integer"
+            android:defaultValue="0" />
         <action
             android:id="@+id/crearPadre_to_padre"
             app:destination="@id/menuPadre" />
@@ -40,6 +44,10 @@
         android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioHijo"
         android:label="fragment_crear_usuario_hijo"
         tools:layout="@layout/fragment_crear_usuario_hijo" >
+        <argument
+            android:name="IdPadre"
+            app:argType="integer"
+            android:defaultValue="0" />
         <action
             android:id="@+id/crearHijo_to_Hijo"
             app:destination="@id/menuHijo" />
@@ -49,13 +57,23 @@
         android:id="@+id/crearTarea"
         android:name="gt.uvg.proyectoplataformas.Package.CrearTarea"
         android:label="fragment_crear_tarea"
-        tools:layout="@layout/fragment_crear_tarea"/>
+        tools:layout="@layout/fragment_crear_tarea">
+        <argument
+        android:name="IdPadre"
+        app:argType="integer"
+        android:defaultValue="0" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/menuPadre"
         android:name="gt.uvg.proyectoplataformas.Package.MenuPadre"
         android:label="fragment_menu_padre"
         tools:layout="@layout/fragment_menu_padre">
+        <argument
+            android:name="IdPadre"
+            app:argType="integer"
+            android:defaultValue="0" />
         <action
             android:id="@+id/padre_to_tarea"
             app:destination="@id/crearTarea" />
@@ -68,7 +86,16 @@
         android:id="@+id/menuHijo"
         android:name="gt.uvg.proyectoplataformas.Package.MenuHijo"
         android:label="fragment_menu_hijo"
-        tools:layout="@layout/fragment_menu_hijo" />
+        tools:layout="@layout/fragment_menu_hijo" >
+        <argument
+            android:name="IdPadre"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="IdHijo"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
     <fragment
         android:id="@+id/inicioHijo"
