@@ -1,14 +1,14 @@
 package gt.uvg.proyectoplataformas.Package
 
+import Tareas
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.NumberPicker
-import android.widget.Toast
+import android.widget.*
+import gt.uvg.proyectoplataformas.Database
 import gt.uvg.proyectoplataformas.R
 import gt.uvg.proyectoplataformas.databinding.FragmentCrearTareaBinding
 
@@ -48,6 +48,29 @@ class CrearTarea : Fragment() {
 
 
         binding.editTextAsignarAHijo.setAdapter(arrayAdapter)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val button5 = view.findViewById<Button>(R.id.button5)
+
+
+        button5.setOnClickListener{
+            var contador = 0
+            if (!view.findViewById<TextView>(R.id.editTextNombreTarea).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextDescripcionTarea).text.isNullOrEmpty() && !view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text.isNullOrEmpty()){
+                for (i in Database.listaPadre[0].listaHijos){
+                    if(i.nombre.equals(view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text)){
+                        Database.listaPadre[0].listaHijos[contador].tareas.add(Tareas())
+                        break
+                    }
+                    contador++
+                }
+
+
+            }
+        }
+
     }
 
     override fun onCreateView(
