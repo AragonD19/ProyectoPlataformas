@@ -26,7 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MenuPadre : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var _binding: FragmentMenuPadreBinding? = null
     private val binding get() = _binding!!
     private val adapterList by lazy { Adapter() }
@@ -85,7 +85,7 @@ class MenuPadre : Fragment() {
             findNavController().navigate(R.id.padre_to_crearHijo)
         }
 
-        val itemList = Database.getItems()
+        val itemList = Database.getItems(0)
 
         adapterList.updateList(itemList)
         val layoutManager = LinearLayoutManager(context)

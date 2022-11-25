@@ -10,6 +10,10 @@
         android:name="gt.uvg.proyectoplataformas.Package.MainFragmentLogin"
         android:label="fragment_main_login"
         tools:layout="@layout/fragment_main_login" >
+        <argument
+            android:name="IdPadre"
+            app:argType="integer"
+            android:defaultValue="0" />
         <action
             android:id="@+id/Login_to_crearPadre"
             app:destination="@id/crearUsuarioPadre" />

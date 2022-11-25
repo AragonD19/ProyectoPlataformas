@@ -1,13 +1,18 @@
 package gt.uvg.proyectoplataformas.Package
 
+import Hijos
+import Padre
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import gt.uvg.proyectoplataformas.R
+import gt.uvg.proyectoplataformas.Database
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,11 +51,29 @@ class CrearUsuarioPadre : Fragment() {
 
 
         button3.setOnClickListener{
-            findNavController().navigate(R.id.crearPadre_to_padre)
+            if (!view.findViewById<TextView>(R.id.editTextTextPassword3).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.isNullOrEmpty() && !view.findViewById<TextView>(R.id.editTextTextPersonName2).text.isNullOrEmpty()){
+                val listaTemp = ArrayList<Hijos>()
+
+                Database.listaPadre.add(
+                    Database.listaPadre.size, Padre(
+                        Database.listaPadre.size,getRandomString(6),
+                        view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString(),view.findViewById<TextView>(R.id.editTextTextPassword3).text.toString(),listaTemp))
+                findNavController().navigate(R.id.crearPadre_to_padre)
+
+            }else{
+                Toast.makeText(activity,"Faltan campos por llenar",Toast.LENGTH_SHORT).show()
+            }
         }
 
 
 
+    }
+
+    fun getRandomString(length: Int) : String {
+        val charset = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789"
+        return (1..length)
+            .map { charset.random() }
+            .joinToString("")
     }
 
     companion object {
