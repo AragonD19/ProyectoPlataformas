@@ -2,7 +2,7 @@
     <string name="app_name">ProyectoPlataformas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="crear_usuario">Crear Usuario</string>
+    <string name="crear_usuario">Crear Usuario Hijo</string>
     <string name="nuevo_usuario">Nuevo Usuario</string>
     <string name="correo">Correo</string>
     <string name="usuario_texto">Correo</string>
