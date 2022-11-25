@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import gt.uvg.proyectoplataformas.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +24,8 @@ class MenuPadre : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,24 +6,6 @@
     app:startDestination="@id/crearUsuarioPadre">
 
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="gt.uvg.proyectoplataformas.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main">
-
-        <action
-            android:id="@+id/Login_to_Padre"
-            app:destination="@id/menuPadre" />
-        <action
-            android:id="@+id/Login_to_crearPadre"
-            app:destination="@id/crearUsuarioPadre" />
-        <action
-            android:id="@+id/action_mainLogin_to_inicioHijo"
-            app:destination="@id/inicioHijo" />
-
-
-    </activity>
     <fragment
         android:id="@+id/crearUsuarioPadre"
         android:name="gt.uvg.proyectoplataformas.Package.CrearUsuarioPadre"
@@ -78,7 +60,6 @@
             android:id="@+id/action_inicioHijo_to_menuHijo"
             app:destination="@id/menuHijo" />
     </fragment>
-
 
 
 </navigation>
