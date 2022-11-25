@@ -57,7 +57,6 @@ class CrearUsuarioPadre : Fragment() {
                 !view.findViewById<TextView>(R.id.editTextTextPersonName2).text.isNullOrEmpty()){
                 var flag = false
                 for (i in Database.listaPadre){
-                    Toast.makeText(activity, "Correo ya utilizado", Toast.LENGTH_SHORT).show()
                     if ( view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString() == i.email) {
                         Toast.makeText(activity, "Correo ya utilizado", Toast.LENGTH_SHORT).show()
                         flag = true
@@ -69,7 +68,7 @@ class CrearUsuarioPadre : Fragment() {
                     Database.listaPadre.add(Padre(
                         0,getRandomString(6),
                         view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString(),view.findViewById<TextView>(R.id.editTextTextPassword3).text.toString(),listaTemp))
-                    findNavController().navigate(R.id.crearPadre_to_padre)
+                    findNavController().navigate(R.id.action_crearUsuarioPadre_to_mainLogin)
                 }
             }else {
                 Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()

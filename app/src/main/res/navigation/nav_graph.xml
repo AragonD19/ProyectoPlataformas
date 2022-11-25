@@ -35,8 +35,8 @@
             app:argType="integer"
             android:defaultValue="0" />
         <action
-            android:id="@+id/crearPadre_to_padre"
-            app:destination="@id/menuPadre" />
+            android:id="@+id/action_crearUsuarioPadre_to_mainLogin"
+            app:destination="@id/mainLogin" />
     </fragment>
 
     <fragment
@@ -49,8 +49,8 @@
             app:argType="integer"
             android:defaultValue="0" />
         <action
-            android:id="@+id/crearHijo_to_Hijo"
-            app:destination="@id/menuHijo" />
+            android:id="@+id/action_crearUsuarioHijo_to_menuPadre"
+            app:destination="@id/menuPadre" />
     </fragment>
 
     <fragment

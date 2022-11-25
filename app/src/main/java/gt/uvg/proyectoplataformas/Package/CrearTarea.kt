@@ -63,7 +63,6 @@ class CrearTarea : Fragment() {
                 for (i in Database.listaPadre[0].listaHijos){
                     if(i.nombre.equals(view.findViewById<AutoCompleteTextView>(R.id.editTextAsignarAHijo).text)){
                         Database.listaPadre[0].listaHijos[contador].tareas.add(Tareas(Database.listaPadre[0].listaHijos[contador].tareas.size,view.findViewById<TextView>(R.id.editTextNombreTarea).text.toString(),view.findViewById<TextView>(R.id.textView6).text.toString(),false))
-                        findNavController().navigate(R.id.action_crearTarea_to_menuPadre)
                     }
                     contador++
                 }

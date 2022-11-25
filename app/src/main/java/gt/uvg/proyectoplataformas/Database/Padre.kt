@@ -3,5 +3,5 @@ data class Padre(
     val codId : String,
     val email : String,
     val contrasena : String,
-    var listaHijos : List<Hijos>
+    var listaHijos : ArrayList<Hijos>
 )

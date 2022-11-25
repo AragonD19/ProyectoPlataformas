@@ -61,12 +61,15 @@ class MainFragmentLogin : Fragment() {
         inicio.setOnClickListener{
             if (!view.findViewById<EditText>(R.id.editTextTextPersonName13).text.isNullOrEmpty() &&
                 !view.findViewById<EditText>(R.id.editTextTextPassword).text.isNullOrEmpty()){
+                var flag = false
                 for (i in Database.listaPadre){
                     if ( view.findViewById<TextView>(R.id.editTextTextPersonName13).text.toString() == i.email && view.findViewById<TextView>(R.id.editTextTextPassword).text.toString() == i.contrasena) {
+                        flag = true
                         findNavController().navigate(R.id.Login_to_Padre)
                     }
                 }
-                Toast.makeText(activity, "Correo o contraseña erronea", Toast.LENGTH_SHORT).show()
+                if(!flag)
+                    Toast.makeText(activity, "Correo o contraseña erronea", Toast.LENGTH_SHORT).show()
 
             }else {
                 Toast.makeText(activity, "Faltan campos por llenar", Toast.LENGTH_SHORT).show()
