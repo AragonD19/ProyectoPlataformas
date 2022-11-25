@@ -47,7 +47,7 @@ class MainFragmentLogin : Fragment() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        
+
     }
 
     override fun onCreateView(
